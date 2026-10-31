@@ -1,0 +1,361 @@
+/* --- Base Layout --- */
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Full height minus navbar */
+  padding: 2rem 5%;
+  background-color: #f9f9f9; /* Very light grey background */
+}
+
+/* --- Left Side: Content --- */
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  animation: fadeIn 1s ease-in-out; /* Smooth appearance */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: #2E7D32; /* Brand Green */
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* The "Shop Now" Button */
+.hero-content button {
+  padding: 1rem 2.5rem;
+  background-color: #2E7D32;
+  color: white;
+  border: none;
+  border-radius: 50px; /* Pill shape like navbar */
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+}
+
+.hero-content button:hover {
+  background-color: #1b5e20; /* Darker green */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+}
+
+/* --- Right Side: Image --- */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  object-fit: cover;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Mobile Responsive --- */
+@media screen and (max-width: 768px) {
+  .home-container {
+    flex-direction: column-reverse; /* Image on top, text below on mobile */
+    text-align: center;
+    padding-top: 4rem;
+  }
+
+  .hero-content {
+    margin-top: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+  }
+}
+.farm-life {
+  padding: 4rem 8%;
+  background: #f4f9f4;
+}
+
+.farm-life-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Text */
+.farm-text {
+  flex: 1;
+}
+
+.farm-text h2 {
+  color: #2E7D32;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.farm-text p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Image */
+.farm-image {
+  flex: 1;
+  text-align: center;
+}
+
+.farm-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .farm-life-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .farm-image img {
+    max-width: 100%;
+  }
+}
+/* --- Lifecycle Premium Section --- */
+/* 🌾 LIFECYCLE SECTION */
+.lifecycle {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.lifecycle-title {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #2E7D32;
+}
+
+/* 📍 TIMELINE CONTAINER */
+.timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* 🔥 LINE */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  width: 90%;
+  height: 4px;
+  background: linear-gradient(to right, #2E7D32, #cddc39);
+  z-index: 0;
+
+  /* ✨ animation */
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: lineGrow 1.5s ease forwards;
+}
+
+/* 🧱 STEP */
+.timeline-step {
+  position: relative;
+  z-index: 1;
+  width: 18%;
+  text-align: center;
+}
+
+/* 🔵 CIRCLE */
+.circle {
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  border-radius: 50%;
+  background: white;
+  border: 4px solid #2E7D32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.timeline-step:hover .circle {
+  background: #2E7D32;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* TEXT */
+.timeline-step h3 {
+  margin-top: 15px;
+  color: #333;
+}
+
+.timeline-step p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 🎬 LINE ANIMATION */
+@keyframes lineGrow {
+  to {
+    transform: scaleX(1);
+  }
+}
+/* 🌿 SECTION BACKGROUND */
+.farm-life {
+  padding: 80px 10%;
+  background: #f9fdf8;
+}
+
+/* LAYOUT */
+.farm-life-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* IMAGE */
+.farm-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* TEXT */
+.farm-text {
+  max-width: 500px;
+}
+
+.farm-text h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+.farm-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.explore-btn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  background: #1b5e20;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .farm-life-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .farm-image img {
+    max-width: 100%;
+  }
+}
+/* ⭐ WHY SECTION */
+.why-velora {
+  padding: 80px 10%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.why-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #2E7D32;
+}
+
+.why-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.why-card {
+  background: #f9fdf8;
+  padding: 30px;
+  border-radius: 15px;
+  width: 280px;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
